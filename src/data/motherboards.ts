@@ -4,7 +4,7 @@ export const mobo: MOBO[] = [
   {
     id: "mobo-001",
     name: "Ryzen 5 5600",
-    brand: "AMD",
+    brand: "ASUS",
     model: "MK",
     socket: "AM4",
     price: 120,
@@ -12,7 +12,7 @@ export const mobo: MOBO[] = [
   {
     id: "mobo-002",
     name: "Ryzen 5 5600",
-    brand: "AMD",
+    brand: "Gigabyte",
     model: "MK",
     socket: "AM4",
     price: 120,
@@ -20,10 +20,17 @@ export const mobo: MOBO[] = [
   {
     id: "mobo-003",
     name: "Ryzen 5 5600",
-    brand: "AMD",
+    brand: "MSI",
     model: "MK",
     socket: "AM4",
     price: 120,
   },
-  
+  {
+    id: "mobo-003",
+    name: "Ryzen 5 5600",
+    brand: "ASRock",
+    model: "MK",
+    socket: "AM4",
+    price: 120,
+  },
 ];

@@ -3,15 +3,27 @@ import { cpus } from "../data/cpus";
 import { gpus } from "../data/gpus";
 import { mobo } from "../data/motherboards";
 
-const Sidebar = () => {
+type propType = {
+  setShowComponent: React.Dispatch<React.SetStateAction<boolean>>;
+  setBrand: React.Dispatch<React.SetStateAction<string>>;
+};
+
+const Sidebar = ({ setShowComponent, setBrand }: propType) => {
   const [openCategory, setOpenCategory] = useState<string | null>(null);
+  const [itemSelected, setItemSelected] = useState<boolean>(false);
 
   const toggleCategory = (category: string) => {
     setOpenCategory((prev) => (prev === category ? null : category));
   };
 
+  const handleSelection = (brand: string) => {
+    setItemSelected(true);
+    setShowComponent(true);
+    setBrand(brand);
+  };
   return (
     <div className="bg-gray-700 p-4 min-w-4 flex-1 mx-2">
+      {/* cpu */}
       <div>
         <button
           onClick={() => toggleCategory("cpu")}
@@ -19,6 +31,7 @@ const Sidebar = () => {
         >
           <span>{openCategory === "cpu" ? "−" : "+"}</span>
           <span>CPU</span>
+          <span>{itemSelected ? "selected" : ""}</span>
         </button>
         <div
           className={`grid transition-all duration-300 ease-in-out ${
@@ -31,7 +44,15 @@ const Sidebar = () => {
             <div className="pl-8 bg-gray-600">
               <ul>
                 {cpus.map((el) => {
-                  return <li className="cursor-pointer">{el.brand}</li>;
+                  return (
+                    <li
+                      key={el.id}
+                      className="cursor-pointer"
+                      onClick={() => handleSelection(el.brand)}
+                    >
+                      {el.brand}
+                    </li>
+                  );
                 })}
               </ul>
             </div>
@@ -58,7 +79,15 @@ const Sidebar = () => {
             <div className="pl-8 bg-gray-600">
               <ul>
                 {gpus.map((el) => {
-                  return <li className="cursor-pointer">{el.brand}</li>;
+                  return (
+                    <li
+                      key={el.id}
+                      className="cursor-pointer"
+                      onClick={() => handleSelection(el.brand)}
+                    >
+                      {el.brand}
+                    </li>
+                  );
                 })}
               </ul>
             </div>
@@ -84,7 +113,15 @@ const Sidebar = () => {
             <div className="pl-8 bg-gray-600">
               <ul>
                 {mobo.map((el) => {
-                  return <li className="cursor-pointer">{el.brand}</li>;
+                  return (
+                    <li
+                      key={el.id}
+                      className="cursor-pointer"
+                      onClick={() => handleSelection(el.brand)}
+                    >
+                      {el.brand}
+                    </li>
+                  );
                 })}
               </ul>
             </div>
