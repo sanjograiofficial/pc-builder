@@ -1,6 +1,6 @@
 import { useState } from "react";
-import BuildSummary from "./components/BuildSummary";
-import ComponentSelector from "./components/ComponentSelector";
+import BuildSummary from "./components/Build";
+import ComponentSelector from "./components/CpuSelector";
 import Sidebar from "./components/Sidebar";
 import Topic from "./components/Topic";
 

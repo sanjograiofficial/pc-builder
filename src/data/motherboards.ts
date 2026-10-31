@@ -26,7 +26,7 @@ export const mobo: MOBO[] = [
     price: 120,
   },
   {
-    id: "mobo-003",
+    id: "mobo-004",
     name: "Ryzen 5 5600",
     brand: "ASRock",
     model: "MK",
