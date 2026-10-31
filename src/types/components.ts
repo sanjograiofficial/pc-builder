@@ -1,4 +1,18 @@
 interface CPU {
+  id: number;
+  brand: string;
+}
+interface IntelCPU {
+  id: string;
+  name: string;
+  brand: string;
+  socket: string;
+  cores: number;
+  threads: number;
+  tdp: number;
+  price: number;
+}
+interface AmdCPU {
   id: string;
   name: string;
   brand: string;
@@ -25,4 +39,4 @@ interface MOBO {
   price: number;
 }
 
-export type { CPU, GPU, MOBO };
+export type { CPU, IntelCPU, AmdCPU, GPU, MOBO };
